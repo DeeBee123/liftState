@@ -1,17 +1,16 @@
 import { Component } from "react";
 import "./dice.css";
+import {
+  One,
+  Two,
+  Three,
+  Four,
+  Five,
+  Six,
+  Default,
+} from "./combinations/index";
 
 export default class Dice extends Component {
-  // constructor(){
-  //     super();
-  //     this.state = {
-
-  //     }
-  // }
-  renderDots = () => {
-    //   switch(){
-    //   }
-  };
 
   render() {
     return (
@@ -20,166 +19,19 @@ export default class Dice extends Component {
           {(() => {
             switch (this.props.value) {
               case 1:
-                return (
-                  <>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>{" "}
-                    </div>
-                  </>
-                );
+                return <One />;
               case 2:
-                return (
-                  <>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>{" "}
-                    </div>
-                  </>
-                );
+                return <Two />;
               case 3:
-                return (
-                  <>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>{" "}
-                    </div>
-                  </>
-                );
+                return <Three />;
               case 4:
-                return (
-                  <>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot hidden"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>{" "}
-                    </div>
-                  </>
-                );
+                return <Four />;
               case 5:
-                return (
-                  <>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>{" "}
-                    </div>
-                  </>
-                );
+                return <Five />;
               case 6:
-                return (
-                  <>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot "></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>{" "}
-                    </div>
-                  </>
-                );
+                return <Six />;
               default:
-                return (
-                  <>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot"></div>
-                      <div className="dot"></div>
-                    </div>
-                    <div className="row">
-                      {" "}
-                      <div className="dot"></div>
-                      <div className="dot hidden"></div>
-                      <div className="dot"></div>{" "}
-                    </div>
-                  </>
-                );
+                return <Default />;
             }
           })()}
         </div>

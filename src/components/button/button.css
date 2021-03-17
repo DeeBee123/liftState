@@ -1,0 +1,9 @@
+.dice-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 5px;
+}
