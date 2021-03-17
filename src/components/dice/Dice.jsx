@@ -35,7 +35,6 @@ export default class Dice extends Component {
             }
           })()}
         </div>
-        <span>{this.props.value}</span>
       </>
     );
   }
