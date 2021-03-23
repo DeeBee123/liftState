@@ -1,7 +1,8 @@
 import "./App.css";
-import Parent from "./components/task1/parent/Parent";
-import Father from "./components/task2/Father";
-import {Task3} from "./components/task3/Task3"
+// import Parent from "./components/task1/parent/Parent";
+// import Father from "./components/task2/Father";
+// import {Task3} from "./components/task3/Task3"
+import {Task4} from "./components/task4/Task4";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <header className="App-header">
         {/* <Parent /> */}
         {/* <Father /> */}
-        <Task3/>
+        {/* <Task3/> */}
+        <Task4/>
       </header>
     </div>
   );
