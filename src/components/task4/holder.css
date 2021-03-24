@@ -15,23 +15,20 @@
     padding: 5px;
 }
 
-.rangeslider-horizontal {
+div.rangeslider-horizontal {
     width: 137px;
     height:10px;
     border-radius: 0;
+    background-color: transparent;
 }
 
-.rangeslider-horizontal .rangeslider__handle{
+div.rangeslider-horizontal .rangeslider__handle{
     border-radius: 0;
     width: 10px;
     height: 30px;
 }
 
-.rangeslider-horizontal .rangeslider__handle:after {
+div.rangeslider-horizontal .rangeslider__handle:after {
     display: none;
 }
 
-
-.rangeslider-vertical{
-    background-color: #E6e6e6;
-}

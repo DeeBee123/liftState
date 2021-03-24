@@ -13,6 +13,7 @@ export const SliderY= (props)=> {
 
     return (
       <Slider
+      className="custom"
         value={props.volume}
         orientation="vertical"
         onChange={handleOnChange}
