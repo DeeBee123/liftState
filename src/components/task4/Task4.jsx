@@ -15,8 +15,8 @@ export class Task4 extends Component {
   }
 
   checkIfScored = () => {
-    135 < this.state.x &&
-      this.state.x < 141 &&
+    130 < this.state.x &&
+      this.state.x < 147 &&
       this.state.y === 111 &&
       this.setState({ x: 0, y: 0, score: this.state.score + 1});
   };
