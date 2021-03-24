@@ -1,22 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
+import "./holder.css";
 
-export default class SliderY extends Component {
-  constructor() {
-    super();
-    this.state = {
-      volume: 0,
-    };
-  }
-  handleOnChange = (value) => {
-    this.props.action(value);
-    this.setState({
-      volume: value,
-    });
-    
+export const SliderY= (props)=> {
+
+  const handleOnChange = (value) => {
+    props.action(value);
   };
-  render() {
-    return <Slider value={this.state.volume} orientation="vertical" onChange={this.handleOnChange} max={166} />;
-  }
+
+
+
+    return (
+      <Slider
+        value={props.volume}
+        orientation="vertical"
+        onChange={handleOnChange}
+        max={166}
+      />
+    );
+  
 }

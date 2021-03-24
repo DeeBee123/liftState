@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Holder } from "./Holder";
-import SliderY from "./SliderY";
-import SliderX from "./SliderX";
+import {SliderY} from "./SliderY";
+import {SliderX} from "./SliderX";
 import { Ball, Basket, Score } from "./Images";
 
 export class Task4 extends Component {
@@ -13,13 +13,24 @@ export class Task4 extends Component {
       score: 0,
     };
   }
-  handleYChange = (value) => {
-    this.setState({ y: value });
+
+  checkIfScored = () => {
+    135 < this.state.x &&
+      this.state.x < 141 &&
+      this.state.y === 111 &&
+      this.setState({ x: 0, y: 0, score: this.state.score + 1});
   };
 
-  handleXChange= (value) => {
-      this.setState({x:value})
-  }
+
+  handleYChange = (value) => {
+    this.setState({ y: value });
+    this.checkIfScored();
+  };
+
+  handleXChange = (value) => {
+    this.setState({ x: value });
+    this.checkIfScored();
+  };
 
   render() {
     return (
@@ -30,8 +41,8 @@ export class Task4 extends Component {
           <Basket />
         </Holder>
         <Holder class="holder two">
-          <SliderY action={this.handleYChange} />
-          <SliderX action={this.handleXChange}/>
+          <SliderY volume={this.state.y} action={this.handleYChange} />
+          <SliderX volume={this.state.x} action={this.handleXChange} />
         </Holder>
       </>
     );
