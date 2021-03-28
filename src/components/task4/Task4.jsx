@@ -7,6 +7,7 @@ import { Ball, Basket, Score } from "./Images";
 export const Task4 = () => {
   const [values, setValues] = useState({ x: 0, y: 0, score: 0 });
 
+
   const checkIfScored = () => {
     130 < values.x &&
       values.x < 147 &&
