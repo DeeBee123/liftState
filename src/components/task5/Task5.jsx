@@ -3,7 +3,6 @@ import { Square } from "./Square";
 import { ButtonUseEffect } from "./ButtonUseEffect";
 
 export const Task5 = () => {
-  const [activeClass, setActiveClass] = useState(true);
   const [square1, setSquare1] = useState(0);
   const [square2, setSquare2] = useState(0);
   const [square3, setSquare3] = useState(0);
@@ -24,7 +23,6 @@ export const Task5 = () => {
       setIsActivesq2(true);
     }
     if (isActive) {
-      console.log("isActive");
       interval = setInterval(() => {
         setSquare1((seconds) => seconds + 1);
       }, 1000);
@@ -35,9 +33,10 @@ export const Task5 = () => {
 
     return () => clearInterval(interval);
   }, [isActive, square1]);
+
   useEffect(() => {
     let interval = null;
-    if (square2 > 9) {
+    if (square2 >= 10) {
       setIsActivesq2(false);
       setIsActivesq3(true);
     }
@@ -48,6 +47,7 @@ export const Task5 = () => {
     } else if (!isActivesq2) {
       clearInterval(interval);
     }
+
     return () => clearInterval(interval);
   }, [isActivesq2, square2]);
 
@@ -64,6 +64,7 @@ export const Task5 = () => {
     } else if (!isActivesq3) {
       clearInterval(interval);
     }
+
     return () => clearInterval(interval);
   }, [isActivesq3, square3]);
 
@@ -79,22 +80,23 @@ export const Task5 = () => {
     } else if (!isActivesq4) {
       clearInterval(interval);
     }
+    
     return () => clearInterval(interval);
   }, [isActivesq4, square4]);
 
   return (
     <div>
       <section className="square-section">
-        <Square isActive={activeClass ? "square active" : "square"}>
+        <Square isActive={isActive ? "square active" : "square"}>
           {square1}
         </Square>
-        <Square isActive={activeClass ? "square active" : "square"}>
+        <Square isActive={isActivesq2 ? "square active" : "square"}>
           {square2}
         </Square>
-        <Square isActive={activeClass ? "square active" : "square"}>
+        <Square isActive={isActivesq3 ? "square active" : "square"}>
           {square3}
         </Square>
-        <Square isActive={activeClass ? "square active" : "square"}>
+        <Square isActive={isActivesq4 ? "square active" : "square"}>
           {square4}
         </Square>
       </section>
