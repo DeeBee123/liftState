@@ -80,7 +80,7 @@ export const Task5 = () => {
     } else if (!isActivesq4) {
       clearInterval(interval);
     }
-    
+
     return () => clearInterval(interval);
   }, [isActivesq4, square4]);
 
@@ -100,7 +100,7 @@ export const Task5 = () => {
           {square4}
         </Square>
       </section>
-      <ButtonUseEffect action={toggle} />
+      <ButtonUseEffect action={toggle} disabled={isActive? true: false}/>
     </div>
   );
 };
