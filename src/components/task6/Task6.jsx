@@ -20,7 +20,6 @@ export const Task6 = () => {
       console.log("ascending flow ok")
     let copyImages = images;
     copyImages.sort((a, b) => a.author.localeCompare(b.author));
-    // console.log(copyImages);
     setImages(copyImages);
   };
 
@@ -28,15 +27,26 @@ export const Task6 = () => {
     console.log("descending flow ok")
     let copyImages = images;
     copyImages.sort((a, b) => b.author.localeCompare(a.author));
-    // console.log(copyImages);
     setImages(copyImages);
   };
+
+  const handleRandom = () => {
+    let copyImages = images;
+    for (var i = copyImages.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = copyImages[i];
+      copyImages[i] = copyImages[j];
+      copyImages[j] = temp;
+    }
+    setImages(copyImages)
+  }
 
   return (
     <>
       <NavBar
         onClickAscending={handleAscending}
         onClickDescending={handleDescending}
+        onClickRandom={handleRandom}
       />
       <Cards images={images} />
     </>
