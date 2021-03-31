@@ -10,7 +10,7 @@ export const Task6 = () => {
   const [currentState, setCurrentState] = useState(false);
 
   useEffect(() => {
-    API.get(`list/dsgfg`)
+    API.get(`list`)
       .then((response) => {
         let data = response.data;
         setImages(data);
