@@ -6,28 +6,38 @@ import { Cards } from "./Cards";
 
 export const Task6 = () => {
   const [images, setImages] = useState([]);
+  const [errorState, setErrorState] = useState(false);
+  const [currentState, setCurrentState] = useState(false);
 
   useEffect(() => {
-    API.get(`v2/list`).then((response) => {
-      console.log("effect");
-      setImages(response.data);
-    });
+    API.get(`list/dsgfg`)
+      .then((response) => {
+        let data = response.data;
+        setImages(data);
+        setErrorState(false);
+      })
+      .catch((error) => {
+        setErrorState(true);
+        console.log(error);
+      });
   }, []);
 
-
+  useEffect(() => {
+    setImages(images);
+  }, [images]);
 
   const handleAscending = () => {
-      console.log("ascending flow ok")
     let copyImages = images;
     copyImages.sort((a, b) => a.author.localeCompare(b.author));
     setImages(copyImages);
+    setCurrentState(currentState ? false : true);
   };
 
   const handleDescending = () => {
-    console.log("descending flow ok")
     let copyImages = images;
     copyImages.sort((a, b) => b.author.localeCompare(a.author));
     setImages(copyImages);
+    setCurrentState(currentState ? false : true);
   };
 
   const handleRandom = () => {
@@ -38,17 +48,22 @@ export const Task6 = () => {
       copyImages[i] = copyImages[j];
       copyImages[j] = temp;
     }
-    setImages(copyImages)
-  }
+    setImages(copyImages);
+    setCurrentState(currentState ? false : true);
+  };
 
   return (
     <>
-      <NavBar
-        onClickAscending={handleAscending}
-        onClickDescending={handleDescending}
-        onClickRandom={handleRandom}
-      />
-      <Cards images={images} />
+   <NavBar
+      onClickAscending={handleAscending}
+      onClickDescending={handleDescending}
+      onClickRandom={handleRandom}
+    />
+    {errorState ? <span>Something went wrong</span> :<Cards images={images}/>}
     </>
+  
+    
+      
+     
   );
 };

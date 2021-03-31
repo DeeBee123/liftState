@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: `https://picsum.photos/`
+    baseURL: `https://picsum.photos/v2/`
 })

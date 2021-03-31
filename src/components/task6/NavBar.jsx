@@ -10,7 +10,7 @@ const handleClickDescending= ()=> {
     onClickDescending();
 }
 const handleClickRandom = ()=> {
-    onClickRandom()
+    onClickRandom();
 }
     return(<nav className="nav-fixed">
         <Button action={handleClickAscending} name="ascending"/>
