@@ -1,17 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {Card} from "./Card";
 
 export const Cards = ({ images }) => {
+  // useEffect(() => {
+
+  // }, []);
   return (
     <section className="gallery">
       {images.map((image) => (
-        <figure className="image" key={image.id}>
-          <img
-            className="image__photo"
-            src={image.download_url}
-            alt={`by ${image.author}`}
-          />
-          <figcaption className="image__author">{image.author}</figcaption>
-        </figure>
+        <Card image={image}/>
       ))}
     </section>
   );

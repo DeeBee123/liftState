@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, compose } from "react";
 import API from "../../shared/imagesData";
 import "./task6.css";
 import { NavBar } from "./NavBar";
 import { Cards } from "./Cards";
+import withCardsLoading from "../../hocs/withCardsLoading";
+
+
 
 export const Task6 = () => {
   const [images, setImages] = useState([]);
