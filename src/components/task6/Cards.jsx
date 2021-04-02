@@ -1,10 +1,9 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {Card} from "./Card";
 
-export const Cards = ({ images }) => {
-  // useEffect(() => {
 
-  // }, []);
+export const Cards = ({ images }) => {
+
   return (
     <section className="gallery">
       {images.map((image) => (

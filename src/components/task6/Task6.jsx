@@ -1,10 +1,8 @@
-import React, { useState, useEffect, compose } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../../shared/imagesData";
 import "./task6.css";
 import { NavBar } from "./NavBar";
-import { Cards } from "./Cards";
-import withCardsLoading from "../../hocs/withCardsLoading";
-
+import CardsComposeBox from "../../hocs/withCardsCompose"
 
 
 export const Task6 = () => {
@@ -61,7 +59,7 @@ export const Task6 = () => {
       {errorState ? (
         <span>Something went wrong</span>
       ) : (
-        <Cards images={images} />
+        <CardsComposeBox images={images} />
       )}
     </>
   );
